@@ -1,4 +1,4 @@
-const sqlOptions ={
+const mssql ={
     HOST: "localhost",
     PORT: "1433",
     USER: "sa",
@@ -12,5 +12,28 @@ const sqlOptions ={
         idle: 10000
     }
 }
+const postgres ={
+    HOST: "localhost",
+    PORT: "5432",
+    USER: "postgres",
+    PASSWORD: "051212",
+    DB: "askadro",
+    dialect: "postgres",
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
+}
 
-module.exports = sqlOptions
+const sqlOption =(sql)=>{
+    switch (sql) {
+        case "mssql":
+            return mssql
+        case "postgres":
+            return postgres
+    }
+}
+
+module.exports = sqlOption

@@ -1,15 +1,15 @@
 const dbConfig = require("../configs/sqlOptions");
 const Sequelize = require("sequelize");
-
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    port: dbConfig.PORT,
-    dialect: dbConfig.dialect,
+const config = dbConfig("postgres");
+const sequelize = new Sequelize(config.DB, config.USER, config.PASSWORD, {
+    host: config.HOST,
+    port: config.PORT,
+    dialect: config.dialect,
     pool: {
-        max: dbConfig.pool.max,
-        min: dbConfig.pool.min,
-        acquire: dbConfig.pool.acquire,
-        idle: dbConfig.pool.idle
+        max: config.pool.max,
+        min: config.pool.min,
+        acquire: config.pool.acquire,
+        idle: config.pool.idle
     },
 })
 const db = {}
