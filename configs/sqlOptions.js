@@ -13,10 +13,10 @@ const mssql ={
     }
 }
 const postgres ={
-    HOST: "localhost",
+    HOST: "askadrodb.c3jt53ac7qqq.us-east-1.rds.amazonaws.com",
     PORT: "5432",
     USER: "postgres",
-    PASSWORD: "051212",
+    PASSWORD: "HakanD1.",
     DB: "askadro",
     dialect: "postgres",
     pool: {
